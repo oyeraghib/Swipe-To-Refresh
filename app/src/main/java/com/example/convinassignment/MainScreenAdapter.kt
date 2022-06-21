@@ -8,6 +8,7 @@ import com.example.convinassignment.databinding.ListItemRecyclerViewBinding
 class MainScreenAdapter: RecyclerView.Adapter<MainScreenAdapter.MainScreenViewHolder>() {
 
     private lateinit var binding: ListItemRecyclerViewBinding
+    val emptyList = ArrayList<String>()
 
     inner class MainScreenViewHolder(val binding: ListItemRecyclerViewBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -17,11 +18,11 @@ class MainScreenAdapter: RecyclerView.Adapter<MainScreenAdapter.MainScreenViewHo
     }
 
     override fun onBindViewHolder(holder: MainScreenViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.binding.tvNumber.text =emptyList[position]
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return emptyList.size
     }
 
 
