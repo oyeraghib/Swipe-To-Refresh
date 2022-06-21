@@ -10,6 +10,8 @@ class MainScreenAdapter: RecyclerView.Adapter<MainScreenAdapter.MainScreenViewHo
     private lateinit var binding: ListItemRecyclerViewBinding
     val emptyList = ArrayList<String>()
 
+
+
     inner class MainScreenViewHolder(val binding: ListItemRecyclerViewBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainScreenViewHolder {
@@ -23,6 +25,11 @@ class MainScreenAdapter: RecyclerView.Adapter<MainScreenAdapter.MainScreenViewHo
 
     override fun getItemCount(): Int {
         return emptyList.size
+    }
+
+    fun addValueOnSwipe() {
+    emptyList.add((emptyList.size + 1).toString())
+        notifyDataSetChanged()
     }
 
 
